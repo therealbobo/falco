@@ -113,7 +113,8 @@ set(CMAKE_C_FLAGS "${CMAKE_COMMON_FLAGS}")
 set(CMAKE_CXX_FLAGS "-std=c++17 ${CMAKE_COMMON_FLAGS} -Wno-class-memaccess")
 
 set(CMAKE_C_FLAGS_DEBUG "${FALCO_EXTRA_DEBUG_FLAGS}")
-set(CMAKE_CXX_FLAGS_DEBUG "${FALCO_EXTRA_DEBUG_FLAGS}")
+set(CMAKE_CXX_FLAGS_DEBUG "${FALCO_EXTRA_DEBUG_FLAGS} -ggdb3 -ltcmalloc_and_profiler")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -ltcmalloc_and_profiler")
 
 set(CMAKE_C_FLAGS_RELEASE "-O3 -fno-strict-aliasing -DNDEBUG")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -fno-strict-aliasing -DNDEBUG")
